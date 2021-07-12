@@ -7,4 +7,5 @@ prediction_fn:
     call: predict
     args:
         X: image
-        sigma: float
+    kwargs:
+        - sigma
