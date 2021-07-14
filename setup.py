@@ -17,5 +17,5 @@ setup(
     url="https://github.com/quantumjot/scivision-test-plugin",
     packages=find_packages(),
     install_requires=requirements,
-    python_requires=">=3.9",
+    python_requires=">=3.7",
 )
