@@ -19,7 +19,7 @@ class AnotherModel:
         preserve_range: bool = True,
         sigma: float = 10.0,
         image: np.ndarray = np.empty((64, 64, 1)),
-    ):
+    ) -> np.ndarray:
         return gaussian(image, sigma=sigma, preserve_range=preserve_range)
 
 
