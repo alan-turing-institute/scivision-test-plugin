@@ -1,1 +1,1 @@
-from .model import AnotherModel, DummyModel
+from .model import AnotherModel, DummyModel, ImageNetModel
