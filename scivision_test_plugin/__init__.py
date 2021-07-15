@@ -1,1 +1,1 @@
-from .model import DummyModel
+from .model import AnotherModel, DummyModel
