@@ -2,7 +2,8 @@ name: test
 url: https://github.com/acocac/scivision-test-plugin.git
 import: scivision_test_plugin
 model: ImageNetModel
-args: None
+args:
+    model_name: resnet18
 prediction_fn:
     call: predict
     args:
