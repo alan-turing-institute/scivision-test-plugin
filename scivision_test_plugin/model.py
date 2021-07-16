@@ -35,9 +35,6 @@ class ImageNetModel:
         self.pretrainedModel, self.preprocess_input = Classifiers.get('resnet18')
 
     def predict(self, image: np.ndarray) -> np.ndarray:
-        model = self.pretrainedModel(
-            input_shape=(224, 224, 3), weights="imagenet", classes=1000
-        )
 
         image = self.preprocess_input(image)
         image = np.expand_dims(image, 0)
