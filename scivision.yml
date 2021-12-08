@@ -2,8 +2,7 @@ name: test
 url: https://github.com/edwardchalstrey1/scivision-test-plugin.git
 import: scivision_test_plugin
 models:
-  - id: 1
-    model: ImageNetModel
+  - model: ImageNetModel
     args:
         model_name: resnet18
     prediction_fn:
@@ -11,8 +10,7 @@ models:
         args:
             X: image
         kwargs: None
-  - id: 2
-    model: DummyModel
+  - model: DummyModel
     args: None
     prediction_fn:
         call: predict
