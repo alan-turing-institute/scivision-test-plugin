@@ -1,6 +1,7 @@
 import numpy as np
 from classification_models.tfkeras import Classifiers
 from skimage.filters import gaussian
+from skimage.transform import resize
 from tensorflow.keras.applications.imagenet_utils import decode_predictions
 
 
@@ -36,6 +37,10 @@ class ImageNetModel:
 
     def predict(self, image: np.ndarray) -> np.ndarray:
         """Gives the top prediction and confidence for the provided image"""
+        image = resize(image, (224, 224), 
+                       preserve_range=True, 
+                       anti_aliasing=True)
+        
         image = self.preprocess_input(image)
         image = np.expand_dims(image, 0)
 
