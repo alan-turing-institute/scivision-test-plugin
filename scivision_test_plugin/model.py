@@ -1,6 +1,8 @@
 import numpy as np
 from classification_models.tfkeras import Classifiers
 from skimage.filters import gaussian
+from skimage.io import imread
+from skimage.transform import resize
 
 
 class DummyModel:
@@ -34,6 +36,12 @@ class ImageNetModel:
         )
 
     def predict(self, image: np.ndarray) -> np.ndarray:
+        
+        image = imread(image)
+        
+        image = resize(image, (224, 224), 
+                       preserve_range=True, 
+                       anti_aliasing=True)
 
         image = self.preprocess_input(image)
         image = np.expand_dims(image, 0)
