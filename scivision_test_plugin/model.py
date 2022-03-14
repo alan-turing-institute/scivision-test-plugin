@@ -40,6 +40,8 @@ class ImageNetModel:
         image = np.expand_dims(image, 0)
 
         y = self.pretrained_model.predict(image)
+        def get_imagenet_label(probs):
+            return decode_predictions(probs, top=1)[0][0]
         _, image_class, class_confidence = get_imagenet_label(y)
         return "{} : {:.2f}%".format(image_class, class_confidence * 100)
 
