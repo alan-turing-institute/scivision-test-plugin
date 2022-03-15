@@ -36,17 +36,7 @@ class ImageNetModel:
         )
 
     def predict(self, image: np.ndarray) -> np.ndarray:
-        """Gives the top prediction and confidence for the provided image"""
-        image = resize(image, (224, 224), 
-                       preserve_range=True, 
-                       anti_aliasing=True)
-        
-        image = self.preprocess_input(image)
-        image = np.expand_dims(image, 0)
-
-        y = self.pretrained_model.predict(image)
-        _, image_class, class_confidence = decode_predictions(y, top=1)[0][0]
-        return "{} : {:.2f}%".format(image_class, class_confidence * 100)
+        return "Test branch says Hello World!"
 
 
 if __name__ == "__main__":
